@@ -8,7 +8,6 @@
 
 import UIKit
 import AwesomeCache
-import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
