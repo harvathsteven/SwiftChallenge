@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AwesomeCache
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        if let path = NSBundle.mainBundle().pathForResource(Constants.clinicListFileName, ofType: "json"){
+            if let data = NSData(contentsOfFile: path){
+                do{
+                    let cache = try Cache<NSData>(name: Constants.clinicListCacheName)
+                    cache.setObject(data, forKey: Constants.clinicListCacheObjectKey, expires: .Never)
+                } catch _ {
+                    print("Caching failed for clinics")
+                }
+            }
+        }
         return true
     }
 
