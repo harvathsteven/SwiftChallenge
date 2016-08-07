@@ -26,11 +26,11 @@ class ClinicStorage {
         return self.clinics.count
     }
     
-    func getClinics() -> [Clinic]{
+    func getClinics() -> [Clinic] {
         return self.clinics
     }
     
-    private func parseJsonData(){
+    private func parseJsonData() {
         
         let json = JSON(data: cache!, options: NSJSONReadingOptions.AllowFragments, error: nil)
         
@@ -71,7 +71,7 @@ class ClinicStorage {
 
     }
     
-    private func retrieveCache(name:String, objectKey:String) -> NSData{
+    private func retrieveCache(name:String, objectKey:String) -> NSData {
         var cache = NSData()
         
         do {

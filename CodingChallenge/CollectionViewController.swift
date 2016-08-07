@@ -21,8 +21,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         
         self.title = Constants.clinics
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(Constants.reloadSelectorPostNotification), name: Constants.reloadClinicCollectionNotification , object: nil)
-        
         clinicStorage = ClinicStorage(cacheName: Constants.clinicListCacheName, objectKey: Constants.clinicListCacheObjectKey)
     }
     
@@ -82,10 +80,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         self.collectionView?.performBatchUpdates(nil, completion: nil)
     }
     
-    func reload(notification:NSNotification){
-        self.collectionView?.reloadData()
-    }
-    
     // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -94,10 +88,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             detailViewController.clinic = sender as? Clinic
         }
     }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(Constants.reloadClinicCollectionNotification)
-    }
+
 }
 
 class ClinicCell:UICollectionViewCell {

@@ -23,10 +23,6 @@ struct Constants {
     static let clinicToDetailSegue = "ClinicToDetail"
     static let detailToMapSegue = "DetailToMap"
     
-    //Notifications
-    static let reloadClinicCollectionNotification = "reloadClinicCollectionView"
-    static let reloadSelectorPostNotification = "reload:"
-    
     //Caching
     static let clinicListCacheName = "ClinicCache"
     static let clinicListCacheObjectKey = "clinics"

@@ -16,7 +16,7 @@ class Clinic {
     private var isPreferred:Bool
     private var location:Location
     
-    init(type:String, id:String, name:String, isPreferred:Bool, location:Location){
+    init(type:String, id:String, name:String, isPreferred:Bool, location:Location) {
         self.type = type
         self.id = id
         self.name = name
@@ -58,7 +58,7 @@ struct Location {
     
 }
 
-struct Geolocation{
+struct Geolocation {
     
     var latitude:Double
     var longitude:Double

@@ -32,7 +32,7 @@ class MapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func centerMapOnLocation(location:CLLocation){
+    func centerMapOnLocation(location:CLLocation) {
         let regionRadius:CLLocationDistance = 2000
         let currentAnnotation = MKPointAnnotation()
         
