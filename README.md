@@ -10,7 +10,7 @@ Instructions:
 
 This small application incorporates four 3rd party dependencies via CocoaPods:
 
-1. KeychainSwift (**to securely store image clinic ids and names as values in tandem with the key clinic type**)
+1. KeychainSwift (**to securely store image clinic ids and names as _values_ in tandem with the _key_ clinic type**)
 2. SwiftyJSON (**to facilicate simplified parsing of JSON data**) 
 3. AwesomeCache (**for performant caching and retrieval of clinic data with NSCache**)
 4. UIColor_Hex_Swift (**to wrap UIColor, making work with backgrounds and gradients easier**)
@@ -26,4 +26,4 @@ A basic MVC structure is used here:
 mapButton.layer.borderColor = UIColor(rgba: "#5284c2").CGColor
 ```
 
-3. The **controller** classes are kept as barebones as possible, aiming to seperate a good amount of the data model business logic and view wizardry. CollectionViewController.swift 
+3. The **controller** classes are kept as barebones as possible, aiming to seperate a good amount of the data model business logic and view wizardry. CollectionViewController.swift takes the JSON data from cache after app launch and renders it in a UICollectionView via a UICollectionViewCell, which transitions to the size of a mobile screen accordingly. DetailViewController.swift pulls relevant details from the data model on a per image clinic basis and displays a UIButton with an applied gradient layer, allowing the user to segue to the final view controller in the navigation stack. The MapViewController uses Apple Maps, taking the lat/long data from the appropriate clinic, and providing a point annotation for it, centered on the screen.
