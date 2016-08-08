@@ -19,11 +19,10 @@ This small application incorporates four 3rd party dependencies via CocoaPods:
 
 A basic MVC structure is used here:
 
-1. The data **model** is relegated to two classes: Clinic.swift and ClinicStorage.swift, the former with a number of convenience methods to get information associated with an image clinic (as well as initializers for clinic, location and geolocation), and the latter handling the parsing and caching of clinic JSON data, as well as the secure storage of clinic id and name properties.
-2. The **view** class is minimal but useful, abiding by the decorator pattern via an extension and wrapping a UIColor_Hex_Swift method. A convenience method for UIButton is provided to promote easy, painless application of layer gradients, for example: 
+- The data **model** is relegated to two classes: Clinic.swift and ClinicStorage.swift, the former with a number of convenience methods to get information associated with an image clinic (as well as initializers for clinic, location and geolocation), and the latter handling the parsing and caching of clinic JSON data, as well as the secure storage of clinic id and name properties.
+- The **view** class is minimal but useful, abiding by the decorator pattern via an extension and wrapping a UIColor_Hex_Swift method. A convenience method for UIButton is provided to promote easy, painless application of layer gradients, for example: 
 
 ```swift
 mapButton.layer.borderColor = UIColor(rgba: "#5284c2").CGColor
 ```
-
-3. The **controller** classes are kept as barebones as possible, aiming for seperation from the data model business logic and view wizardry. CollectionViewController.swift takes the JSON data from cache after app launch and renders it in a UICollectionView via a UICollectionViewCell, which conforms to the size of a mobile screen accordingly. DetailViewController.swift pulls relevant details from the data model on a per clinic basis and displays a UIButton with an applied gradient layer, allowing the user to segue to the final view controller in the navigation stack. The MapViewController uses Apple Maps, taking the lat/long data from the appropriate clinic and providing a point annotation for it, centered on the screen.
+- The **controller** classes are kept as barebones as possible, aiming for seperation from the data model business logic and view wizardry. CollectionViewController.swift takes the JSON data from cache after app launch and renders it in a UICollectionView via a UICollectionViewCell, which conforms to the size of a mobile screen accordingly. DetailViewController.swift pulls relevant details from the data model on a per clinic basis and displays a UIButton with an applied gradient layer, allowing the user to segue to the final view controller in the navigation stack. The MapViewController uses Apple Maps, taking the lat/long data from the appropriate clinic and providing a point annotation for it, centered on the screen.
